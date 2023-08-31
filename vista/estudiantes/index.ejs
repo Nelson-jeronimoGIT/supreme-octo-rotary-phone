@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estudiantes</title>
+</head>
+<body>
+    <h1>estudiantes</h1>
+    <form action="/crud_c" method="post">
+        <input type="text" id="txt_id" name="txt_id" placeholder="id">
+        <input type="text" id="txt_Nombres" name="txt_Nombres" placeholder="Nombres">
+        <input type="text" id="txt_Apellidos" name="txt_Apellidos" placeholder="Apellidos">
+         <input type="text" id="txt_Dirección" name="txt_Dirección" placeholder="Dirección">
+        <input type="text" id="txt_Telefono" name="txt_Telefono" placeholder="Telefono">
+        <input type="date" id="txt_Fn" name="txt_Fn" placeholder="dd-mm-yyyy">
+        <button type="submit" id="btn_crear" name="btn_crear" value="crear">Crear</button>
+        <button type="submit" id="btn_agregar" name="btn_agregar" value="btn_agregar">btn_Agregar</button>
+        <button type="submit" id="btn_modificar" name="btn_modificar" value="btn_modificar">btn_Modificar</button>
+        <button type="submit" id="btn_eliminar" name="btn_eliminar" value="btn_eliminar">btn_Eliminar</button>
+    </form>
+    <table border="1px">
+        <thead>
+            <th>Id</th>
+             
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Dirección</th>
+            <th>Telefono</th>
+            <th>Fecha_Nacimiento</th>
+        </thead>
+        <tbody>
+            <% resultado.forEach((estudiantes) => { %>
+            <tr>
+                <td><%= estudiantes.id_estudiantes %></td>
+                <td><%= estudiantes.Nombres %></td>
+                <td><%= estudiantes.Apellidos %></td>              
+                <td><%= estudiantes.Dirección %></td>
+                <td><%= estudiantes.Telefono %></td>
+                <td><%= estudiantes.tipo_de_sangre %></td>
+                <td><%= estudiantes.Fecha_Nacimiento %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+</body>
+</html>
